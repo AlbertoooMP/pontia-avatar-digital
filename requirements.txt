@@ -1,0 +1,39 @@
+REQUISITOS DEL PROYECTO — Node.js / Next.js (NO Python)
+====================================================
+
+IMPORTANTE: este archivo es informativo. No ejecutar `pip install -r requirements.txt`.
+Las dependencias JavaScript se declaran en package.json y se instalan con pnpm.
+
+ENTORNO NECESARIO
+- Node.js >= 20.9 (consultar `node --version`).
+- npm (incluido con Node.js; necesario para instalar pnpm si no se dispone de él).
+- pnpm (gestor de paquetes; instalar con `npm install -g pnpm` si hace falta).
+- Navegador web moderno con acceso al micrófono y conexión a Internet.
+
+DEPENDENCIAS PRINCIPALES DE LA APLICACIÓN (gestionadas por package.json)
+- next (Next.js)
+- react
+- react-dom
+- @anam-ai/js-sdk
+
+DEPENDENCIAS DE DESARROLLO (gestionadas por package.json)
+- typescript
+- eslint / eslint-config-next
+- tailwindcss / @tailwindcss/postcss
+- @types/node, @types/react, @types/react-dom
+
+SERVICIOS EXTERNOS
+- Cuenta de Anam, API Key y Avatar ID (no confundir con Persona ID).
+- Cuenta de ElevenLabs, ElevenAgent configurado, Agent ID y API Key.
+- La clave de ElevenLabs necesita el permiso ElevenAgents: Escribir (`convai_write`).
+- El procesamiento de los modelos y la generación audiovisual se ejecutan en la nube.
+
+INSTALACIÓN Y EJECUCIÓN (desde la carpeta con package.json)
+1. npm install -g pnpm        (solo si pnpm no está instalado)
+2. pnpm install              (instala las versiones del proyecto)
+3. Crear .env.local a partir de .env.example y configurar las credenciales.
+4. pnpm dev                  (servidor de desarrollo)
+5. Abrir http://localhost:3000
+
+NOTA: no fijar versiones npm en este archivo. package.json y pnpm-lock.yaml
+son la fuente de verdad para las versiones exactas y reproducibilidad.
